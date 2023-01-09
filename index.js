@@ -87,3 +87,16 @@ var finances = [
 ['Jan-2017', 138230],
 ['Feb-2017', 671099]
 ];
+
+
+let totalMonths = 0;
+let totalMoney = 0;
+let totalProfitLoss = 0;
+let totalChange = 0;
+let averageIncrease = ["", -Infinity];
+let averageDecrease = ["", Infinity];
+
+for (let i = 0; i < finances.length; i++) {
+    totalMonths++;
+    // this counts the total number of months by iterating by one for the length of the finance array
+}
