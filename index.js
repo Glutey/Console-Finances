@@ -117,4 +117,5 @@ for (let i = 0; i < finances.length; i++) {
     if (i > 0) {
         let change = finances[i][1] - finances[i - 1][1];
         totalChange += change;
+    }
 }
