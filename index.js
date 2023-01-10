@@ -93,10 +93,24 @@ let totalMonths = 0;
 let totalMoney = 0;
 let totalProfitLoss = 0;
 let totalChange = 0;
+let greatestIncrease = ["", -Infinity];
+let greatestDecrease = ["", Infinity];
+// We are required to find each of the above, this means to start we must initiate these variables
+// and then set them to 0 as they currently have no value... their values will come in the loops.
 let averageIncrease = ["", -Infinity];
 let averageDecrease = ["", Infinity];
+// the Infinity value is a sepcial Value, it allows the code to be generic and will work with,
+// any data set or number as an initial value so that if any changes are greater than or less than this,
+// then it will be updated as a greatest increase.
 
 for (let i = 0; i < finances.length; i++) {
     totalMonths++;
     // this counts the total number of months by iterating by one for the length of the finance array
+    totalMoney += finances[i][1]
+    // here total money has a zero value to start, it then starts at finances[i] which is the very first
+    // sub-array and adds the numeric value within that sub array (finances[i][1]) to the totalMoney variable.
+    // this will iterate through adding all the numbers from each subsequent sub array to the totalMoney variable
+    // until all of the sub-arrays have been accounted for aka, totalMoney = finances.
+
+for 
 }
