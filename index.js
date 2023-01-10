@@ -112,5 +112,9 @@ for (let i = 0; i < finances.length; i++) {
     // this will iterate through adding all the numbers from each subsequent sub array to the totalMoney variable
     // until all of the sub-arrays have been accounted for aka, totalMoney = finances.
 
-for 
+    // If this is not the first month, calculate the change in profit/loss
+    // from the previous month and add it to totalChange
+    if (i > 0) {
+        let change = finances[i][1] - finances[i - 1][1];
+        totalChange += change;
 }
