@@ -103,6 +103,7 @@ let averageDecrease = ["", Infinity];
 // any data set or number as an initial value so that if any changes are greater than or less than this,
 // then it will be updated as a greatest increase.
 
+
 for (let i = 0; i < finances.length; i++) {
    
     // this counts the total number of months by iterating by one for the length of the finance array
@@ -122,11 +123,11 @@ for (let i = 0; i < finances.length; i++) {
         totalChange += change;
 
         if (change > greatestIncrease[1]) {
-            greatestIncrease[0] = finances[i][1];
+            greatestIncrease[0] = finances[i][0];
             greatestIncrease[1] = change;
         }
         if (change < greatestDecrease[1]) {
-            greatestDecrease[0] = finances[i][1];
+            greatestDecrease[0] = finances[i][0];
             greatestDecrease[1] = change;
         }
     }
@@ -141,3 +142,9 @@ for (let i = 0; i < finances.length; i++) {
 // if i then multiple this by 100 to get the original scale of the number id have the initial value displayed in the nearest 100.
 
 // finances[i][1] = Math.round(finances[i][1]/100)*100;
+
+console.log(totalMonths);
+console.log(totalMoney);
+console.log(totalProfitLoss);
+console.log(greatestDecrease);
+console.log(greatestIncrease);
