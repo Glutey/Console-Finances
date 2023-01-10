@@ -104,19 +104,40 @@ let averageDecrease = ["", Infinity];
 // then it will be updated as a greatest increase.
 
 for (let i = 0; i < finances.length; i++) {
-    finances[i][1] = Math.round(finances[i][1]/100)*100
-    totalMonths++;
+   
     // this counts the total number of months by iterating by one for the length of the finance array
-    totalMoney += finances[i][1]
-    // here total money has a zero value to start, it then starts at finances[i] which is the very first
+    totalMonths++;
+
+     // here total money has a zero value to start, it then starts at finances[i] which is the very first
     // sub-array and adds the numeric value within that sub array (finances[i][1]) to the totalMoney variable.
     // this will iterate through adding all the numbers from each subsequent sub array to the totalMoney variable
     // until all of the sub-arrays have been accounted for aka, totalMoney = finances.
-
+    totalMoney += finances[i][1];
+   
     // If this is not the first month, calculate the change in profit/loss
     // from the previous month and add it to totalChange
     if (i > 0) {
+        // finances[i][1] = Math.round(finances[i][1]/100)*100;
         let change = finances[i][1] - finances[i - 1][1];
         totalChange += change;
+
+        if (change > greatestIncrease[1]) {
+            greatestIncrease[0] = finances[i][1];
+            greatestIncrease[1] = change;
+        }
+        if (change < greatestDecrease[1]) {
+            greatestDecrease[0] = finances[i][1];
+            greatestDecrease[1] = change;
+        }
     }
 }
+
+ // math.round() here this function rounds the number placed inside the curly braces
+// to its nearest 10.. i.e. math.round(14.54) would come out as 14.
+// so in order to get to the nearest 100 I need to divide the number by 100 while inside the curly braces
+// for example, if i had a value of 1283.5 and wanted it to display at the nearest 100, 
+// I would need to do math.round(1286.3 / 100) 
+// this would turn 1286.5 into 12.865 inside the braces, and then math.round() would give me 12
+// if i then multiple this by 100 to get the original scale of the number id have the initial value displayed in the nearest 100.
+
+// finances[i][1] = Math.round(finances[i][1]/100)*100;
