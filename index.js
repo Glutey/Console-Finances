@@ -104,6 +104,7 @@ let averageDecrease = ["", Infinity];
 // then it will be updated as a greatest increase.
 
 for (let i = 0; i < finances.length; i++) {
+    finances[i][1] = Math.round(finances[i][1]/100)*100
     totalMonths++;
     // this counts the total number of months by iterating by one for the length of the finance array
     totalMoney += finances[i][1]
