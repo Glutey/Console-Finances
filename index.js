@@ -114,6 +114,8 @@ for (let i = 0; i < finances.length; i++) {
     // this will iterate through adding all the numbers from each subsequent sub array to the totalMoney variable
     // until all of the sub-arrays have been accounted for aka, totalMoney = finances.
     totalMoney += finances[i][1];
+
+   
    
     // If this is not the first month, calculate the change in profit/loss
     // from the previous month and add it to totalChange
@@ -130,8 +132,11 @@ for (let i = 0; i < finances.length; i++) {
             greatestDecrease[0] = finances[i][0];
             greatestDecrease[1] = change;
         }
-    }
+    } 
 }
+
+// Calculate the average change in profit/loss
+let averageChange = totalChange / (totalMonths - 1);
 
  // math.round() here this function rounds the number placed inside the curly braces
 // to its nearest 10.. i.e. math.round(14.54) would come out as 14.
@@ -143,8 +148,9 @@ for (let i = 0; i < finances.length; i++) {
 
 // finances[i][1] = Math.round(finances[i][1]/100)*100;
 
-console.log(totalMonths);
-console.log(totalMoney);
-console.log(totalProfitLoss);
-console.log(greatestDecrease);
-console.log(greatestIncrease);
+console.log("Number of months: " + totalMonths);
+console.log("Total money: " + totalMoney);
+console.log("Average change: " + averageChange)
+console.log("Total Profit / loss: " + totalProfitLoss);
+console.log("Greatest Increase: " + greatestDecrease);
+console.log("Greatest Decrease: " + greatestIncrease);
